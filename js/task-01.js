@@ -1,9 +1,11 @@
-const navEl = document.querySelectorAll('.item');
-console.log('ul#categories',navEl);
+const navEl = document.querySelectorAll('li.item');
+console.log(`В списке ${navEl.length} категории.`);
 
-const heroTitleEl = document.querySelector('h2');
-console.log('heroTitleEl',heroTitleEl);
-console.log(heroTitleEl.textContent);
+const heroTitleEl = document.querySelectorAll('#categories>li');
+heroTitleEl.forEach(e => {
 
-const itemListEl = document.querySelector ('li');
-console.log('itemListEl',itemListEl);
+    console.log(
+      `Категория: ${e.firstElementChild.textContent}, Количество элементов: ${e.lastElementChild.children.length}`,
+    );
+  });
+
